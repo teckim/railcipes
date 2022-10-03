@@ -1,0 +1,17 @@
+{
+  "files.associations": {
+    "*.html.erb": "erb"
+  },
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "railcipes",
+      "database": "railcipes_development",
+      "username": "",
+      "password": ""
+    }
+  ]
+}
