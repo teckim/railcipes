@@ -15,7 +15,7 @@ module.exports = {
         secondary: colors.pink,
       },
       fontFamily: {
-        sans: ["'Lato'", ...defaultTheme.fontFamily.sans],
+        sans: ["'Rubik'", ...defaultTheme.fontFamily.sans],
       },
     },
   },
