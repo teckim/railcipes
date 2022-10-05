@@ -3,5 +3,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  root "application#index"
+  resources :foods, only: %i[index new create destroy]
+
+  root 'application#index'
 end
