@@ -1,4 +1,5 @@
 class Users::AuthController < ApplicationController
+  layout 'application'
   before_action :update_allowed_parameters, if: :devise_controller?
 
   class Responder < ActionController::Responder
