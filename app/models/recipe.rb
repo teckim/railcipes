@@ -1,5 +1,4 @@
 class Recipe < ApplicationRecord
-
   belongs_to :user
   has_many :recipe_foods, dependent: :destroy
   has_many :foods, through: :recipe_foods
@@ -12,5 +11,4 @@ class Recipe < ApplicationRecord
   def self.public_recipes
     @recipes = Recipe.where(public: true).order(created_at: :desc)
   end
-
 end
