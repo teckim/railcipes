@@ -1,8 +1,3 @@
-users.destroy_all
-recipes.destroy_all
-foods.destroy_all
-recipe_foods.destroy_all
-
 users = User.create!([
     {
       name: 'Albert',
