@@ -14,6 +14,6 @@
   </head>
   <body class="antialiased text-slate-400 bg-slate-900">
     <%= render 'shared/alerts' %>
-    <%= yield %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
   </body>
 </html>
