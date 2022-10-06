@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   resources :foods, only: %i[index new create destroy]
-  
+
+  get '/public-recipes', to: 'public_recipes#index'
+
   root 'application#index'
 
   resources :recipes do
