@@ -11,4 +11,10 @@ class Recipe < ApplicationRecord
   def self.public_recipes
     @recipes = Recipe.where(public: true).order(created_at: :desc)
   end
+
+  def total_price
+    @total_price ||= recipe_foods.reduce(0) do |sum, recipe_food|
+      sum + (recipe_food.quantity * recipe_food.food.price)
+    end
+  end
 end
