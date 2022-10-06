@@ -1,0 +1,12 @@
+<div class="rounded p-4 bg-slate-800">
+  <div class="flex justify-between items-center mb-1">
+    <div>
+      <span class="text-2xl text-slate-100"><%= food.name %></span>
+      <span class="text-sm italic ml-1"><%= food.quantity %> <%= food.measurement_unit %></span>
+    </div>
+    <div>
+      <%= render partial: 'delete_button', locals: { food_id: food.id } %>
+    </div>
+  </div>
+  <div class="text-xl"><%= number_to_currency(food.price) %></div>
+</div>

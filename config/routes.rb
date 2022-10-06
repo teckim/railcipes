@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+  resources :foods, only: %i[index new create destroy]
   
-  root "main#index"
+  root 'application#index'
 
   resources :recipes do
     resources :recipe_foods, only: [:create, :destroy]
