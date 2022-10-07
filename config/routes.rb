@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :foods, except: [:update]
-  get 'my_recipes', to: 'recipes#my_recipes'
+  get 'my_recipes', to: 'recipes#index'
   
   resources :general_shopping_list, only: [:index]
   
