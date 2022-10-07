@@ -1,0 +1,7 @@
+<div class="rounded p-4 bg-slate-800">
+  <div class="mb-1">
+    <span class="text-2xl text-slate-100"><%= general_shopping_item.name %></span>
+    <span class="text-sm italic ml-1"><%= general_shopping_item.recipe_foods.sum(:quantity) %> <%= general_shopping_item.measurement_unit %></span>
+  </div>
+  <div class="text-xl"><%= number_to_currency(general_shopping_item.price) %></div>
+</div>
