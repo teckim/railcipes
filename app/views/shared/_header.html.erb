@@ -1,10 +1,15 @@
-<div class="bg-slate-800">
+<nav class="bg-slate-800">
   <div class="container flex justify-between items-center h-16 mx-auto" style="max-width: 960px">
     <%= link_to root_path do %>
-      <div class="font-semibold text-primary-500">RAILCIPES.</div>
+      <div class="font-semibold text-primary-500">RAILCIPES</div>
     <% end %>
-    <div>
-      <%- if user_signed_in? %>
+    <ul class="flex gap-x-4">
+      <li class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium mx-10"><%= link_to "Home", root_path, class: "text-primary-400" %></li>
+      <li class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium mx-10"><%= link_to "Public Recipes", public_recipes_path, class: "text-primary-400" %></li>
+      <li class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"><%= link_to "Foods", foods_path, class: "text-primary-400" %></li>
+      <% if user_signed_in? %>
+        <li class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"><%= link_to "My Recipes", my_recipes_path, class: "text-primary-400" %></li>
+
         <div class="flex items-center gap-x-4">
           <div>
             <div class="font-mono"><%= current_user.name %></div>
@@ -20,6 +25,6 @@
           <% end %>
         </div>
       <% end %>
-    </div>
+    </ul>
   </div>
-</div>
+</nav>
