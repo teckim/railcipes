@@ -8,4 +8,12 @@ class User < ApplicationRecord
   has_many :foods, foreign_key: :user_id, dependent: :destroy
 
   validates :name, presence: true, length: { in: 3..10 }
+
+  def general_food_list
+    @general_food_list = Food
+      .includes(:recipe_foods)
+      .includes(:recipes)
+      .where({ recipes: { user_id: id } })
+      .where.not(user_id: id)
+  end
 end
