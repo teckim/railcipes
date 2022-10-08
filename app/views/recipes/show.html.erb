@@ -1,0 +1,16 @@
+<div>
+  <div class="columns-2 mb-8">
+    <div>
+      <span class="text-lg text-slate-200"><%= @recipe.foods.count %></span>
+      <h3 class="text-sm">Number of food items</h3>
+    </div>
+    <div>
+      <span class="text-lg text-slate-200"><%= number_to_currency(@recipe.total_price) %></span>
+      <h3 class="text-sm">Total price</h3>
+    </div>
+  </div>
+  <div class="mb-4">
+    <h1 class="text-2xl text-primary-400"><%= @recipe.name %></h1>
+    <div class="text-sm italic">By <%= @recipe.user.name %></div>
+  </div>
+</div>

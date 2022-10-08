@@ -1,0 +1,16 @@
+<%= link_to recipe_path(public_recipe) do %>
+  <div class="rounded p-4 bg-slate-800">
+    <div>
+      <span class="text-2xl text-slate-100"><%= public_recipe.name %></span>
+      <span class="text-sm italic ml-1">By <%= public_recipe.user.name %></span>
+    </div>
+    <div class="mt-4">
+      <%= render layout: "shared/tag" do %>
+        <span class="font-medium"><%= pluralize(public_recipe.foods.count, 'Food item') %></span>
+      <% end %>
+      <%= render layout: "shared/tag" do %>
+        <span class="font-medium">Total price <%= number_to_currency(public_recipe.total_price) %></span>
+      <% end %>
+    </div>
+  </div>
+<% end %>
